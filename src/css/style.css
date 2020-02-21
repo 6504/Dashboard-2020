@@ -2,11 +2,11 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-::-webkit-scrollbar {
+  }
+  ::-webkit-scrollbar {
     display: none;
-}
-body {
+  }
+  body {
     font: 16px sans-serif;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -15,69 +15,103 @@ body {
     color: white;
     overflow: hidden;
     background: #222;
-}
-button, input[type="text"], input[type="number"], .select-container, select {
+  }
+  input[type="text"], input[type="number"], .select-container, select {
     color: white;
     background: #444;
     border: none;
+    border-radius: 3px;
     font-size: 14px;
-    padding: 6px 8px;
+    padding: 4px 8px;
     cursor: pointer;
     outline: 0;
-}
-.select-container {
+  }
+  
+  button {
+    color: white;
+    background: #444;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    padding: 10px;
+    cursor: pointer;
+    outline: 0;
+  }
+  .select-container {
     padding: 0;
     display: inline-block;
-}
-select {
+  }
+  select {
     border: none;
     background: none;
     color: white;
     height: 25px;
-}
-input[type="text"], input[type="number"] {
+    background-color: #444;
+  }
+  input[type="text"], input[type="number"] {
     cursor: text;
-}
-input[type="checkbox"] {
+  }
+  input[type="checkbox"] {
     -webkit-filter: saturate(0);
     filter: saturate(0);
-}
-/* Major interface panes, aside, article, header, etc. */
-body > * {
+  }
+  /* Major interface panes, aside, article, header, etc. */
+  body > * {
     padding: 10px;
     position: fixed;
     overflow: scroll;
     background: #222;
-}
-#timer {
-    font-family: monospace;
-    display: block;
-    height: 20vh;
-    width: 30vw;
-    top: 0;
+  }
+  header {
+    display: grid;
+    grid-column-gap: 20px;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    margin: 5px;
+    font-size: 6vh;
+    width: 99.3%;
+    height: 10vh;
+    background-color:#333;
+  }
+  #match-time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #timer {
+    color: green;
+  }
+  #robot-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #robot-state {
+    color: green;
+  }
+  #connect-button {
+    width: 5vw;
+    height: 5vh;
+    padding: 0px;
+  }
+  #camera-box {
+    margin: 5px;
+    bottom: 0vh;
     left: 0;
-    font-size: 20vh;
-    line-height: .8;
-}
-header {
-    width: 20vw;
-    height: 20vh;
-    top: 0;
-    left: 30vw;
-    color: white;
-}
-#camera {
-    padding: 0;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 50vw;
-    height: 80vh;
+    width: 660px;
+    height: 522px;
+    font-size: 3vh;
     overflow: hidden;
     background-color: #333;
+  }
+  #camera {
+    padding: 0;
+    width: 640px;
+    height: 480px;
+    overflow: hidden;
     /* You'll need to mess with this a bit to get your camera to work. Replace the url with a live-updating image feed from your camera. Using other camera streaming systems will require some tweaking. */
-    /*background-image: url('LINK TO CAMERA SOURCE HERE');*/
-}
+    background-image: url('http://frcvision.local:1181?action=stream');
+  }
 article {
     top: 0;
     left: 50vw;

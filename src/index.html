@@ -8,15 +8,17 @@
 </head>
 
 <body>
-    <div id="timer">2:15</div>
     <header>
+        <!-- Displays match time -->
+        <div id="match-time">Match Time: &nbsp; <div id="timer">0</div></div>
         <!-- Tells whether robot is connected to dashboard. -->
-        <div id="robot-state">Unknown state</div>
-        <button id="connect-button">Connect</button>
+        <div id="robot-status">Robot Status: &nbsp; <div id="robot-state">Unknown state</div> &ensp; <button id="connect-button">Connect</button></div>
     </header>
+    
     <!-- You'll need to mess around with the CSS of #camera (found in css/style.css) to get it to work.
         More explanation in that CSS rule. -->
-    <div id="camera"></div>
+    <div id="camera-box">Camera Feed:<div id="camera"></div></div>   
+
     <!-- The main body of the dashboard, by default contains the gyro monitor and the robot diagram -->
     <article>
         <!-- Gyroscope -->
