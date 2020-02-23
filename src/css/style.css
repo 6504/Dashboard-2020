@@ -1,196 +1,265 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  body {
-    font: 16px sans-serif;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    color: white;
-    overflow: hidden;
-    background: #222;
-  }
-  input[type="text"], input[type="number"], .select-container, select {
-    color: white;
-    background: #444;
-    border: none;
-    border-radius: 3px;
-    font-size: 14px;
-    padding: 4px 8px;
-    cursor: pointer;
-    outline: 0;
-  }
-  
-  button {
-    color: white;
-    background: #444;
-    border: none;
-    border-radius: 3px;
-    font-size: 14px;
-    padding: 10px;
-    cursor: pointer;
-    outline: 0;
-  }
-  .select-container {
-    padding: 0;
-    display: inline-block;
-  }
-  select {
-    border: none;
-    background: none;
-    color: white;
-    height: 25px;
-    background-color: #444;
-  }
-  input[type="text"], input[type="number"] {
-    cursor: text;
-  }
-  input[type="checkbox"] {
-    -webkit-filter: saturate(0);
-    filter: saturate(0);
-  }
-  /* Major interface panes, aside, article, header, etc. */
-  body > * {
-    padding: 10px;
-    position: fixed;
-    overflow: scroll;
-    background: #222;
-  }
-  header {
-    display: grid;
-    grid-column-gap: 20px;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto;
-    margin: 5px;
-    font-size: 6vh;
-    width: 99.3%;
-    height: 10vh;
-    background-color:#333;
-  }
-  #match-time {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #timer {
-    color: green;
-  }
-  #robot-status {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  #robot-state {
-    color: green;
-  }
-  #connect-button {
-    width: 5vw;
-    height: 5vh;
-    padding: 0px;
-  }
-  #camera-box {
-    margin: 5px;
-    bottom: 0vh;
-    left: 0;
-    width: 660px;
-    height: 522px;
-    font-size: 3vh;
-    overflow: hidden;
-    background-color: #333;
-  }
-  #camera {
-    padding: 0;
-    width: 640px;
-    height: 480px;
-    overflow: hidden;
-    /* You'll need to mess with this a bit to get your camera to work. Replace the url with a live-updating image feed from your camera. Using other camera streaming systems will require some tweaking. */
-    background-image: url('http://frcvision.local:1181?action=stream');
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+body {
+  font: 16px sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: white;
+  overflow: hidden;
+  background: #222;
+}
+input[type="text"], input[type="number"], .select-container, select {
+  color: white;
+  background: #444;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  padding: 4px 8px;
+  cursor: pointer;
+  outline: 0;
+}
+
+button {
+  color: white;
+  background: #444;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  padding: 10px;
+  cursor: pointer;
+  outline: 0;
+}
+.select-container {
+  padding: 0;
+  display: inline-block;
+}
+select {
+  border: none;
+  background: none;
+  color: white;
+  height: 25px;
+  background-color: #444;
+}
+input[type="text"], input[type="number"] {
+  cursor: text;
+}
+input[type="checkbox"] {
+  -webkit-filter: saturate(0);
+  filter: saturate(0);
+}
+/* Major interface panes, aside, article, header, etc. */
+body > * {
+  padding: 10px;
+  position: fixed;
+  overflow: scroll;
+  background: #222;
+}
+header {
+  display: grid;
+  grid-column-gap: 20px;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  margin: 5px;
+  font-size: 6vh;
+  width: 99.3%;
+  height: 10vh;
+  background-color:#333;
+}
+#match-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#timer {
+  color: green;
+}
+#robot-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#robot-state {
+  color: green;
+}
+#connect-button {
+  width: 5vw;
+  height: 5vh;
+  padding: 0px;
+}
+#camera-box {
+  margin: 5px;
+  bottom: 0vh;
+  left: 0;
+  width: 660px;
+  height: 522px;
+  font-size: 3vh;
+  overflow: hidden;
+  background-color: #333;
+}
+#camera {
+  padding: 0;
+  width: 640px;
+  height: 480px;
+  overflow: hidden;
+  /* You'll need to mess with this a bit to get your camera to work. Replace the url with a live-updating image feed from your camera. Using other camera streaming systems will require some tweaking. */
+  background-image: url('http://frcvision.local:1181/stream.mjpg');
+}
+#lift-encoder-box {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  justify-content: center;
+  text-align: center;
+  margin: 5px;
+  font-size: 3vh;
+  left: 60.5vw;
+  top: 19.4vh;
+  width: 10vw;
+  height: 40vh;
+  background-color: #333;
+}
+#lift-encoder-value {
+  color: green;
+  font-size: 6vh;
+}
+#gauge-area-1 {
+  margin: 5px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  font-size: 3vh;
+  width: 23.7vw;
+  height: 31vh;
+  bottom: 6.4vh;
+  left: 49.8vw;
+  background-color: #333;
+}
 article {
-    top: 0;
-    left: 50vw;
-    height: 100vh;
-    width: 35vw;
+  top: 0;
+  left: 50vw;
+  top: 50vh;
+  height: 100vh;
+  width: 35vw;
 }
 svg * {
-    stroke: white;
-    fill: #222;
-    stroke-width: 2;
-    -webkit-transform-origin: center;
-    -ms-transform-origin: center;
-    transform-origin: center;
+  font: 16px sans-serif;
+  stroke-width: 2;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
 }
 text {
-    font-size: 16px;
-    letter-spacing: 2px;
-    stroke: none;
-    fill: white;
+  font-size: 16px;
+  letter-spacing: 2px;
+  stroke: none;
+  fill: white;
+}
+#orientation {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  justify-content: center;
+  text-align: center;
+  margin: 5px;
+  font-size: 3vh;
+  left: 43.7vw;
+  top: 11.9vh;
+  width: 13vw;
+  height: 40vh;
+  background-color: #333;
 }
 #gyro {
-    width: 175px;
-    height: 175px;
-    margin-left: 30px;
-    margin-top: 15px;
+    width: 13vw;
+    height: 29vh;
 }
 #gyro-arm {
-    -webkit-transform-origin: bottom;
-    -ms-transform-origin: bottom;
-    transform-origin: bottom;
+  -webkit-transform-origin: bottom;
+  -ms-transform-origin: bottom;
+  transform-origin: bottom;
 }
-#gyro-number {
-    font-size: 25px;
-    text-anchor: middle;
+#gyro-text {
+  display: flex;
+  justify-content: center;
 }
-#robot-diagram {
-    position: absolute;
-    bottom: 1px;
-    right: 1vw;
+#gyro-angle {
+  text-anchor: middle;
+  color: green;
 }
-#robot-arm {
-    -webkit-transform-origin: right;
-    -ms-transform-origin: right;
-    transform-origin: right;
+#pressure-measurement {
+  display: grid;
+  grid-template-rows: auto auto;
+  justify-content: center;
+  text-align: center;
+  margin: 5px;
+  background-color: #333;
+  top: 28vh;
+  left: 75vw;
 }
-#team {
-    font-size: 28px;
-    letter-spacing: -1px;
+#pressure-sensor {
+  color: red;
+}
+#theme-selector {
+  margin: 5px;
+  background-color: #333;
+  top: 11.9vh;
+  left: 75vw;
 }
 aside {
     right: 0;
-    top: 0;
-    width: 15vw;
-    height: 100vh;
+    top: 11.9vh;
+    width: 11.5vw;
+    height: 86.6vh;
+    margin: 5px;
+    background-color: #333;
 }
 aside > * {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+}
+#elevation-button-header-text {
+  text-align: center;
+  width: 100%;
+}
+#lift-button-header-text {
+  margin-top: 10vh;
+  text-align: center;
+  width: 100%;
+}
+#side-buttons {
+  display: grid;
+  grid-template-columns: 10vw;
+  /*grid-column-gap: 1vw;*/
+  grid-row-gap: 3vh;
+  justify-content: center;
 }
 #login {
-    position: fixed;
-    display: none;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8)
+  position: fixed;
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8)
 }
 body.login #login {
-    display: flex;
+  display: flex;
 }
 #login :disabled {
-    opacity: 0.6;
+  opacity: 0.6;
 }
 #login > * {
-    height: 40px;
+  height: 40px;
 }
 #login > button {
-    margin-left: 5px;
+  margin-left: 5px;
 }
