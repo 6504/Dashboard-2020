@@ -4,6 +4,15 @@ ui.theme = {
     link: document.getElementById('theme-link')
 };
 
+//Changes theme to match alliance (for funsies)
+NetworkTables.addKeyListener('/FMSInfo/IsRedAlliance', (key, value) => {
+ if(value == true) {
+    NetworkTables.putValue('/SmartDashboard/theme', 'red');
+ } else if(value == false) {
+    NetworkTables.putValue('/SmartDashboard/theme', 'blue');
+ }
+});
+
 // Listen for a theme change
 NetworkTables.addKeyListener('/SmartDashboard/theme', (key, value) => {
     ui.theme.select.value = value;

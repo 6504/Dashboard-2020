@@ -20,16 +20,19 @@
         More explanation in that CSS rule. -->
     <div id="camera-box">Camera Feed:<div id="camera"></div></div>   
 
+    <!-- Gyroscope -->
+    <div id="orientation">Orientation:
+        <svg id="gyro">
+            <circle cx="100" cy="85" r="83"></circle>
+            <circle cx="100" cy="85" r="50"></circle>
+            <rect id="gyro-arm" x="95" y="5" width="10" height="80"></rect>
+            <text id="gyro-number" x="100" y="115">0º</text>
+        </svg>
+    </div>
+
     <!-- The main body of the dashboard, by default contains the gyro monitor and the robot diagram -->
     <article>
-        <!-- Gyroscope -->
-        <svg id="gyro">
-            <circle cx="85" cy="85" r="83"></circle>
-            <circle cx="85" cy="85" r="50"></circle>
-            <rect id="gyro-arm" x="80" y="5" width="10" height="80"></rect>
-            <text id="gyro-number" x="90" y="115">0º</text>
-        </svg>
-        <!-- Example robot diagram, arm moves when encoder value changes -->
+        <!-- Example robot diagram, arm moves when encoder value changes 
         <svg id="robot-diagram" width="332" height="450">
             <text x="40" y="340">Example SVG Robot Diagram</text>
             <rect x="75" y="360" width="230" height="40"></rect>
@@ -39,7 +42,7 @@
             <circle cx="260" cy="410" r="25"></circle>
             <rect x="60" y="380" width="250" height="30"></rect>
             <text id="team" x="185" y="405" text-anchor="middle">####</text>
-        </svg>
+        </svg> -->
     </article>
     <!-- The sidebar of the dashboard. Designed for smaller control elements like selection boxes and small buttons. -->
     <aside>

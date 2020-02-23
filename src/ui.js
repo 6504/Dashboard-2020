@@ -10,9 +10,9 @@ let ui = {
         arm: document.getElementById('gyro-arm'),
         number: document.getElementById('gyro-number')
     },
-    robotDiagram: {
+    /*robotDiagram: {
         arm: document.getElementById('robot-arm')
-    },
+    },*/
     example: {
         button: document.getElementById('example-button'),
         readout: document.getElementById('example-readout').firstChild
@@ -34,10 +34,10 @@ let updateGyro = (key, value) => {
     ui.gyro.arm.style.transform = `rotate(${ui.gyro.visualVal}deg)`;
     ui.gyro.number.textContent = ui.gyro.visualVal + 'º';
 };
-NetworkTables.addKeyListener('/SmartDashboard/drive/navx/yaw', updateGyro);
+NetworkTables.addKeyListener('/SmartDashboard/NavX - yaw', updateGyro);
 
 // The following case is an example, for a robot with an arm at the front.
-NetworkTables.addKeyListener('/SmartDashboard/arm/encoder', (key, value) => {
+/*NetworkTables.addKeyListener('/SmartDashboard/arm/encoder', (key, value) => {
     // 0 is all the way back, 1200 is 45 degrees forward. We don't want it going past that.
     if (value > 1140) {
         value = 1140;
@@ -49,7 +49,7 @@ NetworkTables.addKeyListener('/SmartDashboard/arm/encoder', (key, value) => {
     var armAngle = value * 3 / 20 - 45;
     // Rotate the arm in diagram to match real arm
     ui.robotDiagram.arm.style.transform = `rotate(${armAngle}deg)`;
-});
+});*/
 
 // This button is just an example of triggering an event on the robot by clicking a button.
 NetworkTables.addKeyListener('/SmartDashboard/example_variable', (key, value) => {
@@ -58,7 +58,7 @@ NetworkTables.addKeyListener('/SmartDashboard/example_variable', (key, value) =>
     ui.example.readout.data = 'Value is ' + value;
 });
 
-NetworkTables.addKeyListener('/robot/time', (key, value) => {
+NetworkTables.addKeyListener('/SmartDashboard/Match Time', (key, value) => {
     // This is an example of how a dashboard could display the remaining time in a match.
     // We assume here that value is an integer representing the number of seconds left.
     ui.timer.textContent = value < 0 ? '0:00' : Math.floor(value / 60) + ':' + (value % 60 < 10 ? '0' : '') + value % 60;
@@ -95,16 +95,16 @@ ui.gyro.container.onclick = function() {
     // Store previous gyro val, will now be subtracted from val for callibration
     ui.gyro.offset = ui.gyro.val;
     // Trigger the gyro to recalculate value.
-    updateGyro('/SmartDashboard/drive/navx/yaw', ui.gyro.val);
+    updateGyro('/SmartDashboard/NavX - yaw', ui.gyro.val);
 };
 // Update NetworkTables when autonomous selector is changed
 ui.autoSelect.onchange = function() {
     NetworkTables.putValue('/SmartDashboard/autonomous/selected', this.value);
 };
 // Get value of arm height slider when it's adjusted
-ui.armPosition.oninput = function() {
+/*ui.armPosition.oninput = function() {
     NetworkTables.putValue('/SmartDashboard/arm/encoder', parseInt(this.value));
-};
+};*/
 
 addEventListener('error',(ev)=>{
     ipc.send('windowError',{mesg:ev.message,file:ev.filename,lineNumber:ev.lineno})

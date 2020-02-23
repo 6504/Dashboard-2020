@@ -145,12 +145,14 @@ header {
 article {
   top: 0;
   left: 50vw;
-  top: 50vh;
+  top: 55vh;
   height: 100vh;
   width: 35vw;
 }
 svg * {
   font: 16px sans-serif;
+  stroke: white;
+  fill: #222;
   stroke-width: 2;
   -webkit-transform-origin: center;
   -ms-transform-origin: center;
@@ -165,7 +167,7 @@ text {
 #orientation {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto;
   justify-content: center;
   text-align: center;
   margin: 5px;
@@ -181,17 +183,13 @@ text {
     height: 29vh;
 }
 #gyro-arm {
-  -webkit-transform-origin: bottom;
-  -ms-transform-origin: bottom;
-  transform-origin: bottom;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
 }
-#gyro-text {
-  display: flex;
-  justify-content: center;
-}
-#gyro-angle {
+#gyro-number {
+  font-size: 25px;
   text-anchor: middle;
-  color: green;
 }
 #pressure-measurement {
   display: grid;
