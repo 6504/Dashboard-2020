@@ -10,6 +10,14 @@ let ui = {
         arm: document.getElementById('gyro-arm'),
         number: document.getElementById('gyro-number')
     },
+    roll: {
+        container: document.getElementById('gyro-roll'),
+        val: 0,
+        offset: 0,
+        visualVal: 0,
+        arm: document.getElementById('roll-arm'),
+        number: document.getElementById('roll-number')
+    },
     /*robotDiagram: {
         arm: document.getElementById('robot-arm')
     },*/
@@ -35,6 +43,18 @@ let updateGyro = (key, value) => {
     ui.gyro.number.textContent = ui.gyro.visualVal + 'º';
 };
 NetworkTables.addKeyListener('/SmartDashboard/NavX - yaw', updateGyro);
+
+let updateRoll = (key, value) => {
+    ui.roll.val = value;
+    ui.roll.visualVal = Math.floor(ui.roll.val - ui.roll.offset);
+    ui.roll.visualVal %= 360;
+    if (ui.roll.visualVal < 0) {
+        ui.roll.visualVal += 360;
+    }
+    ui.roll.arm.style.transform = `rotate(${ui.roll.visualVal}deg)`;
+    ui.roll.number.textContent = ui.roll.visualVal + 'º';
+};
+NetworkTables.addKeyListener('/SmartDashboard/NavX - roll', updateRoll);
 
 // The following case is an example, for a robot with an arm at the front.
 /*NetworkTables.addKeyListener('/SmartDashboard/arm/encoder', (key, value) => {

@@ -11,7 +11,7 @@
 <body>
     <header>
         <!-- Displays match time -->
-        <div id="match-time">Match Time: &nbsp; <div id="timer">0</div></div>
+        <div id="match-time">Match Time: &nbsp; <div id="timer">0:00</div></div>
         <!-- Tells whether robot is connected to dashboard. -->
         <div id="robot-status">Robot Status: &nbsp; <div id="robot-state">Unknown state</div> &ensp; <button id="connect-button">Connect</button></div>
     </header>
@@ -21,7 +21,7 @@
     <div id="camera-box">Camera Feed:<div id="camera"></div></div>   
 
     <!-- Gyroscope -->
-    <div id="orientation">Orientation:
+    <div id="heading">Heading:
         <svg id="gyro">
             <circle cx="100" cy="85" r="83"></circle>
             <circle cx="100" cy="85" r="50"></circle>
@@ -30,9 +30,18 @@
         </svg>
     </div>
 
+    <!-- Tilt of the robot (roll) -->
+    <div id="roll">Roll:
+        <svg id="gyro-roll">
+            <circle cx="100" cy="85" r="83"></circle>
+            <circle cx="100" cy="85" r="50"></circle>
+            <rect id="roll-arm" x="20" y="80" width="160" height="10"></rect>
+        </svg>
+        <div id="gyro-text">Roll Angle: &nbsp; <text id="roll-number" x="100" y="115">0º</text></div>
+    </div>
     <!-- The main body of the dashboard, by default contains the gyro monitor and the robot diagram -->
-    <article>
-        <!-- Example robot diagram, arm moves when encoder value changes 
+    <!--<article>
+        Example robot diagram, arm moves when encoder value changes 
         <svg id="robot-diagram" width="332" height="450">
             <text x="40" y="340">Example SVG Robot Diagram</text>
             <rect x="75" y="360" width="230" height="40"></rect>
@@ -42,8 +51,8 @@
             <circle cx="260" cy="410" r="25"></circle>
             <rect x="60" y="380" width="250" height="30"></rect>
             <text id="team" x="185" y="405" text-anchor="middle">####</text>
-        </svg> -->
-    </article>
+        </svg> 
+    </article> -->
     <!-- The sidebar of the dashboard. Designed for smaller control elements like selection boxes and small buttons. -->
     <aside>
         <!-- Example button which toggles /SmartDashboard/exampleValue NetworkTables value.
