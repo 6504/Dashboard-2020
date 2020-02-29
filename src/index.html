@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>FRC Dashboard</title>
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/gauges.css" rel="stylesheet">
     <link id="theme-link" rel="stylesheet" href>
 </head>
 
@@ -19,7 +20,7 @@
     <!-- You'll need to mess around with the CSS of #camera (found in css/style.css) to get it to work.
         More explanation in that CSS rule. -->
     <div id="camera-box">Camera Feed:<div id="camera"></div></div>   
-
+        
     <!-- Gyroscope -->
     <div id="heading">Heading:
         <svg id="gyro">
@@ -39,6 +40,13 @@
         </svg>
         <div id="gyro-text">Roll Angle: &nbsp; <text id="roll-number" x="100" y="115">0º</text></div>
     </div>
+
+    <!-- Voltage and Current gauges -->
+    <div id="gauge-area-1">
+        <div id="battery-voltage" class="gauge-container">Battery Voltage:</div>
+        <div id="total-power" class="gauge-container">Power Draw:</div>
+    </div>
+
     <!-- The main body of the dashboard, by default contains the gyro monitor and the robot diagram -->
     <!--<article>
         Example robot diagram, arm moves when encoder value changes 
@@ -61,6 +69,7 @@
             <button id="example-button">Change example value</button>
             <p id="example-readout">Value is undefined</p>
         </div>
+
         <p>Theme:</p>
         <div class="select-container">
             <select id='theme-select'>
@@ -92,6 +101,7 @@
     <script src="ui.js"></script>
     <script src="connection.js"></script>
     <script src="components/themes.js"></script>
+    <script src="gauges.js"></script>
 </body>
 
 </html>

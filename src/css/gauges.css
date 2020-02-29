@@ -1,0 +1,335 @@
+@media (max-width: 1356px) {
+    #battery-voltage {
+    transform: scale(.87);
+    transform-origin: top left;
+  }
+    #total-power {
+      transform: scale(.87);
+      transform-origin: 125% 0%;
+    }
+    #front-left-power {
+      transform: scale(.8);
+      transform-origin: top left;
+    }
+    #back-left-power {
+      transform: scale(.8);
+      transform-origin: top left;
+    }
+    #front-right-power {
+      transform: scale(.8);
+      transform-origin: top right;
+    }
+    #back-right-power {
+      transform: scale(.8);
+      transform-origin: top right;
+    }
+  }
+  
+  .gauge-container {
+    width: 12vw;
+    display: block;
+    padding-top: 10px;
+    text-align: center;
+  }
+  .gauge-container > .gauge > .dial {
+    stroke: #222;
+    stroke-width: 3;
+    fill: rgba(0,0,0,0);
+  }
+  .gauge-container > .gauge > .value {
+    stroke: rgb(47, 227, 255);
+    stroke-width: 3;
+    fill: rgba(0,0,0,0);
+  }
+  .gauge-container > .gauge > .value-text {
+    fill: white;
+    font-family: Arial;
+    font-size: 20px;
+  }
+  
+  
+  .gauge-container.two {
+    width: 150px;
+    height: 150px;
+    display: block;
+    padding: 10px;
+  }
+  .gauge-container.two > .gauge > .dial {
+    stroke: #222;
+    stroke-width: 3;
+    fill: rgba(0,0,0,0);
+  }
+  .gauge-container.two > .gauge > .value {
+    stroke: rgb(47, 227, 255);
+    stroke-width: 3;
+    fill: rgba(0,0,0,0);
+  }
+  .gauge-container.two > .gauge > .value-text {
+    fill: white;
+    font-family: Arial;
+    font-size: 20px;
+  }
+  
+  #front-left-power {
+    top: 21.2vh;
+    left: 21vw;
+    background-color:#333;
+    padding-top: 10px;
+    text-align: center;
+  }
+  #front-left-power p {
+    font: 15px sans-serif;
+    color: white;
+  }
+  .gauge-container.three {
+    width: 150px;
+    height: 110px;
+    display: block;
+    padding: 10px;
+  }
+  .gauge-container.three > .gauge > .dial {
+    stroke: #222;
+    stroke-width: 3;
+    fill: rgba(0,0,0,0);
+  }
+  .gauge-container.three > .gauge > .value {
+    stroke: rgb(47, 227, 255);
+    stroke-width: 3;
+    fill: rgba(0,0,0,0);
+  }
+  .gauge-container.three > .gauge > .value-text {
+    fill: white;
+    font-family: Arial;
+    font-size: 20px;
+  }
+  
+  #back-left-power {
+    top: 37.9vh;
+    left: 21vw;
+    background-color:#333;
+    padding-top: 10px;
+    text-align: center;
+  }
+  #back-left-power p {
+    font: 15px sans-serif;
+    color: white;
+  }
+  .gauge-container.four {
+    width: 150px;
+    height: 110px;
+    display: block;
+    padding: 10px;
+  }
+  .gauge-container.four > .gauge > .dial {
+    stroke: #222;
+    stroke-width: 3;
+    fill: rgba(0,0,0,0);
+  }
+  .gauge-container.four > .gauge > .value {
+    stroke: rgb(47, 227, 255);
+    stroke-width: 3;
+    fill: rgba(0,0,0,0);
+  }
+  .gauge-container.four > .gauge > .value-text {
+    fill: white;
+    font-family: Arial;
+    font-size: 20px;
+  }
+  
+  #front-right-power {
+    top: 21.2vh;
+    left: 39.6vw;
+    background-color:#333;
+    padding-top: 10px;
+    text-align: center;
+  }
+  #front-right-power p {
+    font: 15px sans-serif;
+    color: white;
+  }
+  .gauge-container.five {
+    width: 150px;
+    height: 110px;
+    display: block;
+    padding: 10px;
+  }
+  .gauge-container.five > .gauge > .dial {
+    stroke: #222;
+    stroke-width: 3;
+    fill: rgba(0,0,0,0);
+  }
+  .gauge-container.five > .gauge > .value {
+    stroke: rgb(47, 227, 255);
+    stroke-width: 3;
+    fill: rgba(0,0,0,0);
+  }
+  .gauge-container.five > .gauge > .value-text {
+    fill: white;
+    font-family: Arial;
+    font-size: 20px;
+  }
+  
+  #back-right-power {
+    top: 37.9vh;
+    left: 39.6vw;
+    background-color:#333;
+    padding-top: 10px;
+    text-align: center;
+  }
+  #back-right-power p {
+    font: 15px sans-serif;
+    color: white;
+  }
+  .gauge-container.six {
+    width: 150px;
+    height: 110px;
+    display: block;
+    padding: 10px;
+  }
+  .gauge-container.six > .gauge > .dial {
+    stroke: #222;
+    stroke-width: 3;
+    fill: rgba(0,0,0,0);
+  }
+  .gauge-container.six > .gauge > .value {
+    stroke: rgb(47, 227, 255);
+    stroke-width: 3;
+    fill: rgba(0,0,0,0);
+  }
+  .gauge-container.six > .gauge > .value-text {
+    fill: white;
+    font-family: Arial;
+    font-size: 20px;
+  }
+  
+  #lift-power {
+    top: 68.7vh;
+    left: 30.3vw;
+    background-color:#333;
+    padding-top: 10px;
+    text-align: center;
+  }
+  #lift-power p {
+    font: 15px sans-serif;
+    color: white;
+  }
+  .gauge-container.seven {
+    width: 150px;
+    height: 110px;
+    display: block;
+    padding: 10px;
+  }
+  .gauge-container.seven > .gauge > .dial {
+    stroke: #222;
+    stroke-width: 3;
+    fill: rgba(0,0,0,0);
+  }
+  .gauge-container.seven > .gauge > .value {
+    stroke: rgb(47, 227, 255);
+    stroke-width: 3;
+    fill: rgba(0,0,0,0);
+  }
+  .gauge-container.seven > .gauge > .value-text {
+    fill: white;
+    font-family: Arial;
+    font-size: 20px;
+  }
+  
+  #climber1-power {
+    top: 53.3vh;
+    left: 21vw;
+    background-color:#333;
+    padding-top: 10px;
+    text-align: center;
+  }
+  #climber1-power p {
+    font: 15px sans-serif;
+    color: white;
+  }
+  .gauge-container.eight {
+    width: 150px;
+    height: 110px;
+    display: block;
+    padding: 10px;
+  }
+  .gauge-container.eight > .gauge > .dial {
+    stroke: #222;
+    stroke-width: 3;
+    fill: rgba(0,0,0,0);
+  }
+  .gauge-container.eight > .gauge > .value {
+    stroke: rgb(47, 227, 255);
+    stroke-width: 3;
+    fill: rgba(0,0,0,0);
+  }
+  .gauge-container.eight > .gauge > .value-text {
+    fill: white;
+    font-family: Arial;
+    font-size: 20px;
+  }
+  
+  #climber2-power {
+    top: 53.3vh;
+    left: 39.6vw;
+    background-color:#333;
+    padding-top: 10px;
+    text-align: center;
+  }
+  #climber2-power p {
+    font: 15px sans-serif;
+    color: white;
+  }
+  .gauge-container.nine {
+    width: 150px;
+    height: 110px;
+    display: block;
+    padding: 10px;
+  }
+  .gauge-container.nine > .gauge > .dial {
+    stroke: #222;
+    stroke-width: 3;
+    fill: rgba(0,0,0,0);
+  }
+  .gauge-container.nine > .gauge > .value {
+    stroke: rgb(47, 227, 255);
+    stroke-width: 3;
+    fill: rgba(0,0,0,0);
+  }
+  .gauge-container.nine > .gauge > .value-text {
+    fill: white;
+    font-family: Arial;
+    font-size: 20px;
+  }
+  
+  #pneumatics-power {
+    top: 80vh;
+    left: 80vw;
+    background-color:#333;
+    padding-top: 10px;
+    text-align: center;
+  }
+  #pneumatics-power p {
+    font: 15px sans-serif;
+    color: white;
+  }
+  .gauge-container.ten {
+    width: 160px;
+    height: 150px;
+    display: block;
+    padding: 10px;
+  }
+  .gauge-container.ten > .gauge > .dial {
+    stroke: #222;
+    stroke-width: 3;
+    fill: rgba(0,0,0,0);
+  }
+  .gauge-container.ten > .gauge > .value {
+    stroke: rgb(47, 227, 255);
+    stroke-width: 3;
+    fill: rgba(0,0,0,0);
+  }
+  .gauge-container.ten > .gauge > .value-text {
+    fill: white;
+    font-family: Arial;
+    font-size: 20px;
+  }

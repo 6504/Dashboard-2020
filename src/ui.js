@@ -85,7 +85,7 @@ NetworkTables.addKeyListener('/SmartDashboard/Match Time', (key, value) => {
 });
 
 // Load list of prewritten autonomous modes
-NetworkTables.addKeyListener('/SmartDashboard/autonomous/modes', (key, value) => {
+NetworkTables.addKeyListener('/SmartDashboard/Auto Selector/options', (key, value) => {
     // Clear previous list
     while (ui.autoSelect.firstChild) {
         ui.autoSelect.removeChild(ui.autoSelect.firstChild);
@@ -97,11 +97,11 @@ NetworkTables.addKeyListener('/SmartDashboard/autonomous/modes', (key, value) =>
         ui.autoSelect.appendChild(option);
     }
     // Set value to the already-selected mode. If there is none, nothing will happen.
-    ui.autoSelect.value = NetworkTables.getValue('/SmartDashboard/currentlySelectedMode');
+    ui.autoSelect.value = NetworkTables.getValue('/SmartDashboard/Auto Selector/default');
 });
 
 // Load list of prewritten autonomous modes
-NetworkTables.addKeyListener('/SmartDashboard/autonomous/selected', (key, value) => {
+NetworkTables.addKeyListener('/SmartDashboard/Auto Selector/active', (key, value) => {
     ui.autoSelect.value = value;
 });
 
@@ -117,9 +117,10 @@ ui.gyro.container.onclick = function() {
     // Trigger the gyro to recalculate value.
     updateGyro('/SmartDashboard/NavX - yaw', ui.gyro.val);
 };
+
 // Update NetworkTables when autonomous selector is changed
 ui.autoSelect.onchange = function() {
-    NetworkTables.putValue('/SmartDashboard/autonomous/selected', this.value);
+    NetworkTables.putValue('/SmartDashboard/Auto Selector/active', this.value);
 };
 // Get value of arm height slider when it's adjusted
 /*ui.armPosition.oninput = function() {
