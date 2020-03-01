@@ -97,7 +97,7 @@ NetworkTables.addKeyListener('/SmartDashboard/Auto Selector/options', (key, valu
         ui.autoSelect.appendChild(option);
     }
     // Set value to the already-selected mode. If there is none, nothing will happen.
-    ui.autoSelect.value = NetworkTables.getValue('/SmartDashboard/Auto Selector/default');
+    ui.autoSelect.value = NetworkTables.getValue('/SmartDashboard/Auto Selector/active');
 });
 
 // Load list of prewritten autonomous modes

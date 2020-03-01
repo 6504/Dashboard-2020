@@ -39,7 +39,7 @@ var totalPowerGauge = Gauge(document.getElementById("total-power"), {
       }
     }
 });
-NetworkTables.addKeyListener('/SmartDashboard/Total Power', (key, value) => {
+NetworkTables.addKeyListener('/SmartDashboard/Total Power Draw', (key, value) => {
    totalPowerGauge.setValueAnimated(value);
 });
 
