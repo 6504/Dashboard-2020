@@ -69,7 +69,7 @@ header {
   grid-template-rows: auto;
   margin: 5px;
   font-size: 6vh;
-  width: 99.3%;
+  width: 99.35%;
   height: 10vh;
   background-color:#333;
 }
@@ -118,18 +118,24 @@ header {
   display: flex;
   justify-content: center;
   font-size: 3vh;
-  width: 23.7vw;
+  width: 29.5vw;
   height: 31vh;
-  bottom: 6.4vh;
-  left: 49.8vw;
+  bottom: 0vh;
+  left: 57.5vw;
   background-color: #333;
 }
 article {
-  top: 0;
-  left: 50vw;
-  top: 55vh;
-  height: 100vh;
-  width: 35vw;
+  top: 12.7vh;
+  left: 57.8vw;
+  height: 53.5vh;
+  width: 29.55vw;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 4vw;
+  justify-content: center;
+  text-align: center;
+  font-size: 3vh;
+  background-color: #333;
 }
 svg * {
   font: 16px sans-serif;
@@ -200,17 +206,7 @@ text {
   font-size: 4vh;
   text-anchor: middle;
 }
-#pressure-measurement {
-  display: grid;
-  grid-template-rows: auto auto;
-  justify-content: center;
-  text-align: center;
-  margin: 5px;
-  background-color: #333;
-  top: 28vh;
-  left: 75vw;
-}
-#pressure-sensor {
+#in-range, #shooter-status {
   color: red;
 }
 #theme-selector {
@@ -243,7 +239,7 @@ aside > * {
   display: grid;
   grid-template-columns: 10vw;
   /*grid-column-gap: 1vw;*/
-  grid-row-gap: 3vh;
+  /*grid-row-gap: 3vh;*/
   justify-content: center;
 }
 #login {

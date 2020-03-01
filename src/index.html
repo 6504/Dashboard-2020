@@ -48,9 +48,21 @@
     </div>
 
     <!-- The main body of the dashboard, by default contains the gyro monitor and the robot diagram -->
-    <!--<article>
-        Example robot diagram, arm moves when encoder value changes 
-        <svg id="robot-diagram" width="332" height="450">
+    <article>
+        <div id="target-range">
+            Vision target:<div id="in-range">Not in range</div>
+        </div>
+        <div id="target-distance">
+            Distance from target:<div id="distance">0</div>
+        </div>
+        <div id="shooter-info">
+            Shooter:<div id="shooter-status">Not Charged</div>
+        </div>
+        <div id="encoder-info">
+            Encoder velocity:<div id="velocity">0</div>
+        </div>
+        <!-- Example robot diagram, arm moves when encoder value changes 
+         <svg id="robot-diagram" width="332" height="450">
             <text x="40" y="340">Example SVG Robot Diagram</text>
             <rect x="75" y="360" width="230" height="40"></rect>
             <rect x="85" y="370" width="210" height="40"></rect>
@@ -59,8 +71,8 @@
             <circle cx="260" cy="410" r="25"></circle>
             <rect x="60" y="380" width="250" height="30"></rect>
             <text id="team" x="185" y="405" text-anchor="middle">####</text>
-        </svg> 
-    </article> -->
+        </svg> -->
+    </article>
     <!-- The sidebar of the dashboard. Designed for smaller control elements like selection boxes and small buttons. -->
     <aside>
         <!-- Example button which toggles /SmartDashboard/exampleValue NetworkTables value.

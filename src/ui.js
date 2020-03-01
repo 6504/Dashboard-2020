@@ -2,6 +2,10 @@
 let ui = {
     timer: document.getElementById('timer'),
     robotState: document.getElementById('robot-state').firstChild,
+    targetRange: document.getElementById('in-range'),
+    targetDistance: document.getElementById('distance'),
+    shooterCharged: document.getElementById('shooter-status'),
+    encoderVelocity: document.getElementById('velocity'),
     gyro: {
         container: document.getElementById('gyro'),
         val: 0,
@@ -76,6 +80,32 @@ NetworkTables.addKeyListener('/SmartDashboard/example_variable', (key, value) =>
     // Set class active if value is true and unset it if it is false
     ui.example.button.classList.toggle('active', value);
     ui.example.readout.data = 'Value is ' + value;
+});
+
+//Showing whether the target is in range for shooting
+NetworkTables.addKeyListener('/SmartDashboard/Target In Range', (key, value) => {
+    if(value == true) {
+        ui.targetRange.textContent = "In Range";
+        ui.targetRange.style.color = "green";
+    }
+});
+
+//Showing whether shooter is charged 
+NetworkTables.addKeyListener('/SmartDashboard/Speed Reached', (key, value) => {
+    if(value == true) {
+        ui.shooterCharged.textContent = "Charged";
+        ui.shooterCharged.style.color = "green";
+    }
+});
+
+//Showing the horizontal distance from the target
+NetworkTables.addKeyListener('/vision/distance', (key, value) => {
+    ui.targetDistance.textContent = value.toFixed(2) + " ft";
+});
+
+//Showing the velocity of the encoder on the shooter (in rpm)
+NetworkTables.addKeyListener('/SmartDashboard/Encoder Velocity', (key, value) => {
+    ui.encoderVelocity.textContent = value.toFixed(2) + " u/100ms";
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/Match Time', (key, value) => {
