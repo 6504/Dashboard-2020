@@ -87,6 +87,9 @@ NetworkTables.addKeyListener('/SmartDashboard/Target In Range', (key, value) => 
     if(value == true) {
         ui.targetRange.textContent = "In Range";
         ui.targetRange.style.color = "green";
+    } else {
+        ui.targetRange.textContent = "Not In Range";
+        ui.targetRange.style.color = "red";
     }
 });
 
@@ -95,6 +98,9 @@ NetworkTables.addKeyListener('/SmartDashboard/Speed Reached', (key, value) => {
     if(value == true) {
         ui.shooterCharged.textContent = "Charged";
         ui.shooterCharged.style.color = "green";
+    } else {
+        ui.shooterCharged.textContent = "Not Charged";
+        ui.shooterCharged.style.color = "red"; 
     }
 });
 
