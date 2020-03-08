@@ -156,8 +156,9 @@ ui.gyro.container.onclick = function() {
 
 // Update NetworkTables when autonomous selector is changed
 ui.autoSelect.onchange = function() {
-    NetworkTables.putValue('/SmartDashboard/Auto Selector/active', this.value);
+    NetworkTables.putValue('/SmartDashboard/Auto Selector/selected', this.value);
 };
+
 // Get value of arm height slider when it's adjusted
 /*ui.armPosition.oninput = function() {
     NetworkTables.putValue('/SmartDashboard/arm/encoder', parseInt(this.value));
