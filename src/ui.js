@@ -5,7 +5,9 @@ let ui = {
     targetRange: document.getElementById('in-range'),
     targetDistance: document.getElementById('distance'),
     shooterCharged: document.getElementById('shooter-status'),
-    encoderVelocity: document.getElementById('velocity'),
+    currentEncoderVelocity: document.getElementById('current-encoder-velocity'),
+    projectedEncoderVelocityRPM: document.getElementById('projected-speed-rpm'),
+    projectedEncoderVelocityNativeUnits: document.getElementById('projected-encoder-velocity'),
     gyro: {
         container: document.getElementById('gyro'),
         val: 0,
@@ -109,9 +111,19 @@ NetworkTables.addKeyListener('/vision/distance', (key, value) => {
     ui.targetDistance.textContent = value.toFixed(2) + " ft";
 });
 
-//Showing the velocity of the encoder on the shooter (in rpm)
+//Showing the velocity of the encoder on the shooter (in u/100ms)
 NetworkTables.addKeyListener('/SmartDashboard/Encoder Velocity', (key, value) => {
-    ui.encoderVelocity.textContent = value.toFixed(2) + " u/100ms";
+    ui.currentEncoderVelocity.textContent = value.toFixed(2) + " u/100ms";
+});
+
+//Showing target velocity of the encoder on the shooter in RPM
+NetworkTables.addKeyListener('/SmartDashboard/Calculated Launch Velocity in RPM', (key, value) => {
+    ui.projectedEncoderVelocityRPM.textContent = value.toFixed(2) + " RPM";
+});
+
+//Showing target velocity of the encoder on the shooter in u/100ms
+NetworkTables.addKeyListener('/SmartDashboard/Calculated Launch Velocity in u/100ms', (key, value) => {
+    ui.projectedEncoderVelocityNativeUnits.textContent = value.toFixed(2) + " u/100ms";
 });
 
 NetworkTables.addKeyListener('/SmartDashboard/Match Time', (key, value) => {

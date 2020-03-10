@@ -111,6 +111,11 @@ header {
   overflow: hidden;
   /* You'll need to mess with this a bit to get your camera to work. Replace the url with a live-updating image feed from your camera. Using other camera streaming systems will require some tweaking. */
   background-image: url('http://10.65.4.11:1181/stream.mjpg');
+  /*background-color: purple;*/
+}
+#drone-strike {
+  width: 640px;
+  height: 480px;
 }
 #gauge-area-1 {
   margin: 5px;

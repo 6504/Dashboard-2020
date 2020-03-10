@@ -19,7 +19,14 @@
     
     <!-- You'll need to mess around with the CSS of #camera (found in css/style.css) to get it to work.
         More explanation in that CSS rule. -->
-    <div id="camera-box">Camera Feed:<div id="camera"></div></div>   
+    <div id="camera-box">
+        Camera Feed:
+        <div id="camera">
+            <!--<svg id="drone-strike">
+                <rect width="400" height="100" x="50" y="0" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+            </svg>-->
+        </div>
+    </div>   
         
     <!-- Gyroscope -->
     <div id="heading">Heading:
@@ -59,7 +66,13 @@
             Shooter:<div id="shooter-status">Not Charged</div>
         </div>
         <div id="encoder-info">
-            Encoder velocity:<div id="velocity">0</div>
+            Current Encoder velocity:<div id="current-encoder-velocity">0</div>
+        </div>
+        <div id="projected-speed1">
+            Projected Encoder Velocity (RPM):<div id="projected-speed-rpm">0</div>
+        </div>
+        <div id="projected-speed2">
+            Projected Encoder velocity (u/100ms):<div id="projected-encoder-velocity">0</div>
         </div>
         <!-- Example robot diagram, arm moves when encoder value changes 
          <svg id="robot-diagram" width="332" height="450">
