@@ -8,7 +8,7 @@ This is the code for Team 6504's 2020 dashboard, heavily based on the [FRC Dashb
 
 **Portions of code may be incomplete/unfinished, as the FRC 2020 season was cut short due to the COVID-19 pandemic.**
 
-**Development of this code will be continued, but will be moved to FRC-2021.**
+**Development of this code will be continued, but will be moved to a new repository.**
 
 **- Chandi Kanhai**
 
